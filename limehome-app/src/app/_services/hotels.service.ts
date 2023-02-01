@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Hotel, RootObject } from '../_models/models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelsService {
-  private baseUrl = 'http://localhost:3001/hotels';
+  private baseUrl = environment.apiUrl;
 
   private _hotels$ = new BehaviorSubject<Hotel[]>([])
   
