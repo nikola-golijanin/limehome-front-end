@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BookHotelComponent } from './book-hotel.component';
 
@@ -8,9 +9,9 @@ describe('BookHotelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookHotelComponent ]
-    })
-    .compileComponents();
+      imports: [ReactiveFormsModule],
+      declarations: [BookHotelComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BookHotelComponent);
     component = fixture.componentInstance;
