@@ -1,0 +1,100 @@
+h3 {
+    align-self: center;
+}
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    z-index: 50;
+}
+
+.booked-box {
+    position: fixed;
+    top: 30vh;
+    left: 20vw;
+    width: 70vw;
+    z-index: 100;
+    display: flex;
+    justify-self: center;
+}
+
+.container {
+    display: flex;
+    background: rgb(255, 255, 255);
+    height: 40%;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    align-self: start;
+    bottom : 25vh;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 5px;
+    padding: 20px;
+    height: 100%;
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number],[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    border: none;
+    color: white;
+    height: 5vh;
+    width: 50%;
+    align-self: center;
+}
+
+.btn-valid {
+    background-color: rgba(247,148,29,255);
+}
+
+.btn-invalid {
+    background-color: rgba(239,239,240);
+}
+
+.btn-cancel {
+    border: none;
+    color: white;
+    height: 5vh;
+    width: 50%;
+    align-self: center;
+    background-color : rgba(247,148,29,255);
+}
+
+@media (min-width: 820px) {
+    .container {
+        position: relative;
+        left: 30%;
+        width: 40%;
+    }
+}
+
+.btn-container {
+    display: flex;
+    gap: 10px;
+}

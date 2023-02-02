@@ -9,6 +9,13 @@
       [hotel]="hotel"
       #swiperSlide
       (click)="setSelectedHotel(hotel)"
+      (bookHotel)="bookHotel($event)"
     ></app-hotel-card>
   </ng-template>
 </swiper>
+
+<app-book-hotel
+  *ngIf="bookedHotel"
+  [hotel]="bookedHotel"
+  (closeModal)="closeModal()"
+></app-book-hotel>

@@ -7,19 +7,23 @@ import { NavComponent } from './nav/nav.component';
 import { SwiperModule } from 'swiper/angular';
 import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
 import { HotelCardComponent } from './hotels/hotel-card/hotel-card.component';
+import { BookHotelComponent } from './hotels/book-hotel/book-hotel.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HotelListComponent,
-    HotelCardComponent
+    HotelCardComponent,
+    BookHotelComponent
   ],
   imports: [
     BrowserModule,
     GoogleMapsModule,
     HttpClientModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

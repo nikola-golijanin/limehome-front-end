@@ -1,0 +1,48 @@
+<div class="backdrop" (click)="closeBookHotelModal()"></div>
+<div class="booked-box">
+  <div class="container">
+    <h3>Book {{ hotel?.title }} hotel</h3>
+    <form [formGroup]="bookHotelForm" (ngSubmit)="bookHotel()" class="form">
+      <label for="firstName">First name</label>
+      <input type="text" formControlName="firstName" placeholder="First name" />
+      <label for="firstName">Last name</label>
+      <input type="text" formControlName="lastName" placeholder="Last name" />
+      <label for="startDate">Start date</label>
+      <input
+        type="date"
+        formControlName="startDate"
+        [min]="today | date : 'yyyy-MM-dd'"
+      />
+      <label for="endDate">End date</label>
+      <input
+        type="date"
+        formControlName="endDate"
+        [min]="today | date : 'yyyy-MM-dd'"
+      />
+      <label for="guests">Number of guests</label>
+      <input
+        type="number"
+        formControlName="numberOfGuests"
+        placeholder="Number of guests"
+        min="1"
+      />
+      <div class="btn-container">
+        <button
+          type="submit"
+          class="btn-submit"
+          [disabled]="!bookHotelForm.valid"
+          [ngClass]="
+            bookHotelForm.valid
+              ? 'btn-submit btn-valid'
+              : 'btn-submit btn-invalid'
+          "
+        >
+          <strong>Book now</strong>
+        </button>
+        <button class="btn-cancel" (click)="closeBookHotelModal()">
+          <strong>Cancel</strong>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

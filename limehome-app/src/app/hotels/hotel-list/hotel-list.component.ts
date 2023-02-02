@@ -13,6 +13,7 @@ export class HotelListComponent implements OnInit {
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
   @ViewChild(SwiperComponent, { static: false }) componentRef?: SwiperComponent;
   currentSlideIndex: number | undefined;
+  bookedHotel: Hotel | undefined;
   hotels: Hotel[] = [];
   config: SwiperOptions = {
     centeredSlides: true,
@@ -46,5 +47,13 @@ export class HotelListComponent implements OnInit {
 
   setSelectedHotel(hotel:Hotel){
     this.hotelsService.setSelectedHotel(hotel);
+  }
+
+  bookHotel(hotel:Hotel){
+    this.bookedHotel = hotel;
+  }
+
+  closeModal(){
+      this.bookedHotel = undefined;
   }
 }

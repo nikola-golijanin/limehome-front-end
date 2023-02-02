@@ -9,6 +9,12 @@ import { Hotel } from 'src/app/_models/models';
 })
 export class HotelCardComponent {
   @Input() hotel : Hotel | undefined;
+  @Output() bookHotel = new Subject<Hotel>();
   priceConst = 95;
-
+    
+  bookConcreteHotel(){
+    if(this.hotel){
+      this.bookHotel.next(this.hotel)
+    }
+  }
 }
