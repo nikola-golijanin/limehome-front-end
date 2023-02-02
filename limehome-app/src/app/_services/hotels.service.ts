@@ -27,6 +27,11 @@ export class HotelsService {
   setSelectedHotel(hotel?: Hotel) {
     this._selectedHotel$.next(hotel);
   }
+
+  setSelectedHotelByIndex(index:number){
+    const activeHotel = this._hotels$.value?.[index];
+    this.setSelectedHotel(activeHotel);
+  }
   
   public loadHotels() {
     this.http.get<RootObject>(this.baseUrl).subscribe({

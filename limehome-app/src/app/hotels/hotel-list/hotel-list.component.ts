@@ -42,7 +42,7 @@ export class HotelListComponent implements OnInit {
   }
 
   onSlideChange(event:any){
-    this.hotelsService.setSelectedHotel(event[0].realIndex);
+    this.hotelsService.setSelectedHotelByIndex(event[0].realIndex);
   }
 
   setSelectedHotel(hotel:Hotel){
