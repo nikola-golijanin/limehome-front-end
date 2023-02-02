@@ -12,13 +12,14 @@ h3 {
 }
 
 .booked-box {
-    position: fixed;
-    top: 30vh;
-    left: 20vw;
     width: 70vw;
     z-index: 100;
     display: flex;
     justify-self: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
 }
 
 .container {
@@ -29,7 +30,6 @@ h3 {
     flex-direction: column;
     position: relative;
     align-self: start;
-    bottom : 25vh;
 }
 
 .form {
