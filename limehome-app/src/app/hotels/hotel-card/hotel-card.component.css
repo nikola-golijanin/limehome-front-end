@@ -10,7 +10,7 @@
     width: 100%;
     flex-direction: column;
     position: relative;
-    min-width: 40%;
+    min-width: 60%;
 }
 
 .card-body {
