@@ -4,5 +4,11 @@
   (slideChange)="onSlideChange($event)"
   class="mySwiper"
 >
-  <ng-template swiperSlide *ngFor="let hotel of hotels"> slide </ng-template>
+  <ng-template swiperSlide *ngFor="let hotel of hotels">
+    <app-hotel-card
+      [hotel]="hotel"
+      #swiperSlide
+      (click)="setSelectedHotel(hotel)"
+    ></app-hotel-card>
+  </ng-template>
 </swiper>

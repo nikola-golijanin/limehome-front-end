@@ -1,0 +1,26 @@
+<div *ngIf="hotel" class="container">
+  <div class="card-body">
+    <div class="img-container"></div>
+    <div class="hotel-info">
+      <h4>{{ hotel.title }}</h4>
+      <p class="destination-paragraph">
+        <strong
+          >{{ hotel.distance / 1000 | number : "1.2-2" }} km from city
+          center</strong
+        >
+      </p>
+      <h2>{{ priceConst | currency : "GBP" }}</h2>
+      <p
+        class="design-paragraph"
+        style="margin-bottom: unset; color: #b0bcc7d9; font-size: small"
+      >
+        Design may vary
+      </p>
+    </div>
+  </div>
+  <div class="btn-container">
+    <button class="btn">
+      <strong>Book</strong>
+    </button>
+  </div>
+</div>

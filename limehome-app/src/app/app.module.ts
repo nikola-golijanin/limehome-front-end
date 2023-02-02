@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { SwiperModule } from 'swiper/angular';
 import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
+import { HotelCardComponent } from './hotels/hotel-card/hotel-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HotelListComponent,
+    HotelCardComponent
   ],
   imports: [
     BrowserModule,
