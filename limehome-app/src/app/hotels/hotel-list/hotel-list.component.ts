@@ -23,7 +23,21 @@ export class HotelListComponent implements OnInit {
     pagination: false,
     scrollbar: { draggable: true },
     loop:true,
-    loopedSlides: 2
+    loopedSlides: 2,
+    breakpoints: {
+      400: {
+        slidesPerView: 1.25,
+      },
+      500: {
+        slidesPerView: 1.5,
+      },
+      600: {
+        slidesPerView: 2.5,
+      },
+      700: {
+        slidesPerView: 3,
+      }
+    },
   };
 
   constructor(private hotelsService:HotelsService){}  
