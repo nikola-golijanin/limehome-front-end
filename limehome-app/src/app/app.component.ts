@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { GoogleMap } from '@angular/google-maps';
 import { Hotel } from './_models/models';
 import { HotelsService } from './_services/hotels.service';
 
@@ -8,19 +9,20 @@ import { HotelsService } from './_services/hotels.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  @ViewChild('googleMap') googleMap? : GoogleMap; 
   homeIcon = '../../assets/home-icon.svg';
   activeHomeIcon = '../../assets/home-icon-active.svg';
   hotels: Hotel[] = [];
+  selectedHotel? : Hotel;
   options:google.maps.MapOptions = {
     disableDefaultUI: true,
-
   }
   center: google.maps.LatLngLiteral = {
     lat: 48.1351, // Munich cordinates
     lng: 11.5820
   }
 
-  constructor(private hotelsService:HotelsService){}  
+  constructor(private hotelsService:HotelsService, private changeDetectorRef: ChangeDetectorRef){}  
 
   ngOnInit(): void {
     this.loadHotels();
@@ -33,5 +35,14 @@ export class AppComponent implements OnInit{
         this.hotels = hotels;
       }
     });
+
+    this.hotelsService.selectedHotel.subscribe({
+      next: (selectedHotel) => {
+        const selectedHotelLocation = selectedHotel?.position ?? this.center;
+        this.googleMap?.panTo(selectedHotelLocation);
+        this.selectedHotel = selectedHotel;
+        this.changeDetectorRef.detectChanges();
+      }
+    })
   }
 }

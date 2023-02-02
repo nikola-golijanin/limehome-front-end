@@ -11,16 +11,27 @@ export class HotelsService {
   private baseUrl = environment.apiUrl;
 
   private _hotels$ = new BehaviorSubject<Hotel[]>([])
-  
+  private _selectedHotel$ = new BehaviorSubject<Hotel | undefined>(undefined);
+
   hotels$ = this._hotels$.asObservable();
-  constructor(private http:HttpClient) { 
+  selectedHotel = this._selectedHotel$.asObservable();
+
+  constructor(private http:HttpClient) {
+    this._hotels$.subscribe({
+      next: (hotels) => {
+        this.setSelectedHotel(hotels[0]);
+      }
+    }) 
   }
 
+  setSelectedHotel(hotel?: Hotel) {
+    this._selectedHotel$.next(hotel);
+  }
+  
   public loadHotels() {
     this.http.get<RootObject>(this.baseUrl).subscribe({
       next: (response) => {
         const hotels = response.items;
-        debugger;
         this._hotels$.next(hotels);
       },
     });
