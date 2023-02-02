@@ -8,7 +8,8 @@ import { HotelsService } from './_services/hotels.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'limehome-app';
+  homeIcon = '../../assets/home-icon.svg';
+  activeHomeIcon = '../../assets/home-icon-active.svg';
   hotels: Hotel[] = [];
   options:google.maps.MapOptions = {
     disableDefaultUI: true,

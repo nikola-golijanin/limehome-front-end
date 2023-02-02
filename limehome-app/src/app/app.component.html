@@ -6,4 +6,7 @@
   [center]="center"
   [options]="options"
 >
+  <div *ngFor="let hotel of hotels">
+    <map-marker [position]="hotel.position" [icon]="homeIcon"></map-marker>
+  </div>
 </google-map>
