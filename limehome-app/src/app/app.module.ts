@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { SwiperModule } from 'swiper/angular';
+import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    HotelListComponent,
   ],
   imports: [
     BrowserModule,

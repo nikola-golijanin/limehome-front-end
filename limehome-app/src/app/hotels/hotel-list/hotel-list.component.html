@@ -1,0 +1,8 @@
+<swiper
+  #swiper
+  [config]="config"
+  (slideChange)="onSlideChange($event)"
+  class="mySwiper"
+>
+  <ng-template swiperSlide *ngFor="let hotel of hotels"> slide </ng-template>
+</swiper>

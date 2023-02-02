@@ -5,6 +5,7 @@
   width="100vw"
   [center]="center"
   [options]="options"
+  style="position: absolute; top: 0; z-index: -1"
 >
   <div *ngFor="let hotel of hotels">
     <map-marker
@@ -13,3 +14,4 @@
     ></map-marker>
   </div>
 </google-map>
+<app-hotel-list></app-hotel-list>
